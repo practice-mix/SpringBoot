@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="appender-metric-semaphore" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/metric-semaphore.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} %msg%n</Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>logs/history-metric-semaphore/metric-semaphore.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+
+    </appender>
+
+    <logger name="logger-metric-semaphore" level="info" additivity="false">
+        <appender-ref ref="appender-metric-semaphore"/>
+    </logger>
+
+</configuration>

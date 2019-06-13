@@ -1,0 +1,2 @@
+== note
+`*-spring-boot-starter` 把各module中的dependency汇集了下, 其实并没甚必要
